@@ -26,6 +26,7 @@ import NotFound from "./pages/NotFound";
 import YouTubeShorts from "./pages/YouTubeShorts";
 import Podcasts from "./pages/Podcasts";
 import StudentDiscounts from "./pages/StudentDiscounts";
+import AIBotFab from "@/components/ui/AIBotFab";
 
 const queryClient = new QueryClient();
 
@@ -69,6 +70,7 @@ const App: React.FC = () => {
         <BrowserRouter>
           <AppContent />
         </BrowserRouter>
+        <AIBotFab />
       </TooltipProvider>
     </QueryClientProvider>
   );
