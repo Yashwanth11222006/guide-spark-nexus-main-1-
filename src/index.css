@@ -212,6 +212,20 @@
   .touch-target {
     @apply min-h-[44px] min-w-[44px] flex items-center justify-center;
   }
+
+  @keyframes shimmer {
+    0% {
+      left: -60%;
+    }
+
+    100% {
+      left: 120%;
+    }
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2.2s linear infinite;
+  }
 }
 
 /* Mobile-specific improvements */
@@ -268,23 +282,6 @@
   /* Better mobile spacing */
   .section-padding {
     @apply py-8;
-  }
-
-  /* Mobile-specific animation for fade-in and slide-up */
-  .mobile-animate-in {
-    animation: mobileFadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
-  }
-
-  @keyframes mobileFadeInUp {
-    from {
-      opacity: 0;
-      transform: translateY(32px);
-    }
-
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
   }
 }
 

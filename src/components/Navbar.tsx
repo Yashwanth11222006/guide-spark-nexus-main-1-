@@ -87,8 +87,8 @@ const Navbar = () => {
           className={cn(
             "flex items-center justify-between transition-all duration-500 w-full max-w-7xl mx-auto",
             isScrolled
-              ? "bg-black/20 backdrop-blur-xl shadow-2xl rounded-2xl sm:rounded-3xl px-3 sm:px-4 md:px-6 py-2 md:py-3 border border-white/10"
-              : "bg-black/15 backdrop-blur-xl px-2 md:px-4 py-2 border border-white/5 rounded-2xl sm:rounded-3xl"
+              ? "bg-black/20 backdrop-blur-xl shadow-2xl rounded-2xl sm:rounded-3xl px-3 sm:px-4 md:px-6 py-2 md:py-3 border-t-0 border-x-0 border-b-[2.5px] border-b-[linear-gradient(90deg,rgba(255,255,255,0.85)_0%,rgba(168,85,247,0.7)_50%,rgba(255,255,255,0.85)_100%)]"
+              : "bg-black/15 backdrop-blur-xl px-2 md:px-4 py-2 border-none rounded-2xl sm:rounded-3xl"
           )}
           whileHover={{ scale: isScrolled ? 1.01 : 1 }}
           transition={{ duration: 0.3 }}

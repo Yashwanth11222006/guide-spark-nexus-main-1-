@@ -18,7 +18,7 @@ import PaidCourses from "./pages/PaidCourses";
 import FreeCourses from "./pages/FreeCourses";
 import CourseMaterials from "./pages/CourseMaterials";
 import StartupSchemes from "./pages/StartupSchemes";
-import SignIn from "./pages/SignIn";
+import SignIn from "./pages/login";
 import SignUp from "./pages/SignUp";
 import Profile from "./pages/Profile";
 import Network from "./pages/Network";
@@ -36,6 +36,7 @@ const AppContent: React.FC = () => {
   return (
     <Routes>
       <Route path="/" element={<Index />} />
+      <Route path="/home" element={<Index />} />
       <Route path="/finance" element={<Finance />} />
       <Route path="/events" element={<Events />} />
       <Route path="/startups" element={<Startups />} />

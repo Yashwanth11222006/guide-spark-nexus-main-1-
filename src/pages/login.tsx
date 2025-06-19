@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -74,6 +73,16 @@ const SignIn = () => {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: "easeOut" }}
       >
+        {/* Animated MP4 Background */}
+        <video
+          src={require("../../public/anima/c1.mp4")}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover object-center z-0"
+          style={{ borderRadius: 0 }}
+        />
         {/* Animated Background Elements */}
         <div className="absolute inset-0">
           <motion.div 

@@ -52,12 +52,15 @@ const AIBotFab: React.FC = () => {
     };
 
     return (
-        <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 1000 }}>
+        <div style={{ position: "fixed", bottom: 24, right: 24, zIndex: 1000 }}
+            onMouseLeave={() => setOpen(false)}
+        >
             {!open ? (
                 <button
                     aria-label="Open Classy Chatbot"
                     className="rounded-full gradient-bg shadow-xl w-16 h-16 flex items-center justify-center hover:scale-110 transition-transform duration-300 border-2 border-white/30"
                     onClick={() => setOpen(true)}
+                    onMouseEnter={() => setOpen(true)}
                     style={{ transition: 'all 0.4s cubic-bezier(.4,2,.6,1)' }}
                 >
                     <span role="img" aria-label="Classy bot" className="text-3xl">🤖</span>
@@ -73,7 +76,7 @@ const AIBotFab: React.FC = () => {
                         borderRadius: "32px 32px 32px 48px/32px 32px 48px 32px",
                         boxShadow: "0 12px 40px 0 rgba(139,92,246,0.15)",
                         color: "#222",
-                        border: "2px solid #e5e7eb",
+                        border: "2px solid #000", // Black border
                         overflow: "hidden",
                         transition: "all 0.4s cubic-bezier(.4,2,.6,1)",
                         backdropFilter: "blur(8px)",

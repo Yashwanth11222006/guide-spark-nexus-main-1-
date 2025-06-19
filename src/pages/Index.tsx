@@ -66,8 +66,10 @@ const Index = () => {
       variants={pageVariants}
       initial="initial"
       animate="animate"
-      className="min-h-screen bg-black text-white overflow-x-hidden"
+      className="min-h-screen text-white overflow-x-hidden"
     >
+      {/* Black background moved to the farthest back for animation visibility */}
+      <div className="fixed inset-0 -z-50 bg-black" />
       {/* Enhanced Animated background */}
       <div className="fixed inset-0 -z-10 overflow-hidden">
         {/* Grid pattern with animation */}
@@ -175,6 +177,47 @@ const Index = () => {
               repeat: Infinity,
               ease: "easeInOut",
               delay: i * 0.5,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Cosmic planet arc and floating stars background */}
+      <div className="fixed inset-0 -z-20 pointer-events-none">
+        {/* Large glowing arc (planet) at bottom center */}
+        <div
+          className="absolute left-1/2 bottom-[-120px] -translate-x-1/2"
+          style={{
+            width: '120vw',
+            height: '60vh',
+            borderRadius: '50% 50% 0 0/100% 100% 0 0',
+            background: 'radial-gradient(ellipse at center, rgba(139,92,246,0.25) 0%, rgba(236,72,153,0.18) 40%, rgba(17,24,39,0.01) 80%)',
+            filter: 'blur(32px)',
+            boxShadow: '0 0 120px 60px #8B5CF6, 0 0 240px 120px #EC4899',
+            opacity: 0.85,
+          }}
+        />
+        {/* Soft floating stars */}
+        {[...Array(18)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-white/20 shadow-lg"
+            style={{
+              width: `${1.5 + Math.random() * 2.5}px`,
+              height: `${1.5 + Math.random() * 2.5}px`,
+              left: `${10 + Math.random() * 80}%`,
+              top: `${5 + Math.random() * 80}%`,
+              filter: 'blur(0.5px)',
+            }}
+            animate={{
+              y: [0, -10 - Math.random() * 20, 0],
+              opacity: [0.5, 1, 0.5],
+            }}
+            transition={{
+              duration: 8 + Math.random() * 6,
+              repeat: Infinity,
+              ease: 'easeInOut',
+              delay: i * 0.3,
             }}
           />
         ))}
